@@ -1,0 +1,491 @@
+hello python
+返回主页 大数据和人工智能躺过的坑 我是一枚热衷技术的程序员，我是九月哥，每天都在路上！ 欢迎您的加入，一起来探讨交流技术。 目前重点研究Spring、Spring boot、Hadoop、HBase、Zookeeper、Flume、Kafka、Sqoop、Hive、Spark、Flink、Docker等，对Kettle二次开发有一定研究。
+博客园 首页 新随笔 联系 订阅 管理随笔 - 1804  文章 - 0  评论 - 204
+全网最详细的用pip安装****模块报错：Could not find a version that satisfies the requirement ****(from version:) No matching distribution found for ****的解决办法（图文详解）
+ 
+
+ 
+
+ 
+
+　　　　不多说，直接上干货！
+
+ 
+
+ 
+
+ 
+
+问题详情
+
+　　　　这个问题，很普遍。如我这里想实现，Windows下Anaconda2 / Anaconda3里正确下载安装用来向微信好友发送消息的itchat库。
+
+ 
+
+　　　　见，我撰写的
+
+ 
+
+全网最全的Windows下Anaconda2 / Anaconda3里正确下载安装用来向微信好友发送消息的itchat库（图文详解）
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+  
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+　　　　出现：
+
+
+
+ 
+
+PS C:\Anaconda3\Scripts> pip3.exe install itchat
+Collecting itchat
+  Could not find a version that satisfies the requirement itchat (from versions: )
+No matching distribution found for itchat
+ 
+
+ 
+
+　　　　或者出现：
+
+　　cmd中想用pip安装pymongo模块
+
+　　显示黄色错误信息ReadTimeoutError和ConnectTimeoutError
+
+　　Retrying几次之后显示红色错误信息Could not find a version that satisfies the requirement pymongo(from version:)   No matching distribution found for pymongo
+
+　　报错信息如下图所示：
+
+　　　　
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+　　看有些网友说是因为网络的问题，要使用国内的镜像源来加速：pip install pymongo -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+
+　　又出现报错了：
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+　　问题解决
+
+　　　　　多执行几次
+
+
+
+复制代码
+PS C:\Anaconda3\Scripts>
+PS C:\Anaconda3\Scripts> pip3.exe install itchat
+Collecting itchat
+  Could not find a version that satisfies the requirement itchat (from versions: )
+No matching distribution found for itchat
+PS C:\Anaconda3\Scripts> pip3.exe install itchat
+Collecting itchat
+  Downloading https://files.pythonhosted.org/packages/57/99/20dde4bee645453d1453ae3757b49f24a5fd179ce6e391cf2542cfeac61c/itchat-1.3.10-py2.py3-none-any.whl
+Collecting pypng (from itchat)
+  Downloading https://files.pythonhosted.org/packages/2f/b1/c8dfcf50feb12a30be7d95c5f45d638704682487d8e50419ef41463febcd/pypng-0.0.18.tar.gz (377kB)
+    100% |████████████████████████████████| 378kB 785kB/s
+Collecting pyqrcode (from itchat)
+  Downloading https://files.pythonhosted.org/packages/37/61/f07226075c347897937d4086ef8e55f0a62ae535e28069884ac68d979316/PyQRCode-1.2.1.tar.gz
+Requirement already satisfied: requests in c:\anaconda3\lib\site-packages (from itchat) (2.14.2)
+Building wheels for collected packages: pypng, pyqrcode
+  Running setup.py bdist_wheel for pypng ... done
+  Stored in directory: C:\Users\lenovo\AppData\Local\pip\Cache\wheels\ed\30\6c\21dd4d267f47ea09fb57881b30fe16f7231b71bd26dea38afc
+  Running setup.py bdist_wheel for pyqrcode ... done
+  Stored in directory: C:\Users\lenovo\AppData\Local\pip\Cache\wheels\54\61\2f\a4f51b09473db5737db0f654ed10eb9a4ee01f83a7412de349
+Successfully built pypng pyqrcode
+Installing collected packages: pypng, pyqrcode, itchat
+Successfully installed itchat-1.3.10 pypng-0.0.18 pyqrcode-1.2.1
+PS C:\Anaconda3\Scripts>
+复制代码
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+　　或者
+
+ 　　不过这次报错信息比较友好，提示pip版本太低需要升级，就按照它提示的命令输入，但是update的过程失败了好几次，多执行几次就好了，我是第4次才成功：
+
+ 
+
+　　至此成功更新pip！
+
+ 
+
+ 
+
+　　接下来输入你一开始要执行的命令pip install pymongo，就可以成功安装啦！
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+欢迎大家，加入我的微信公众号：大数据躺过的坑        人工智能躺过的坑
+ 
+ 
+ 
+同时，大家可以关注我的个人博客：
+
+   http://www.cnblogs.com/zlslch/   和     http://www.cnblogs.com/lchzls/      http://www.cnblogs.com/sunnyDream/   
+
+   详情请见：http://www.cnblogs.com/zlslch/p/7473861.html
+
+ 
+
+　　人生苦短，我愿分享。本公众号将秉持活到老学到老学习无休止的交流分享开源精神，汇聚于互联网和个人学习工作的精华干货知识，一切来于互联网，反馈回互联网。
+　　目前研究领域：大数据、机器学习、深度学习、人工智能、数据挖掘、数据分析。 语言涉及：Java、Scala、Python、Shell、Linux等 。同时还涉及平常所使用的手机、电脑和互联网上的使用技巧、问题和实用软件。 只要你一直关注和呆在群里，每天必须有收获
+
+ 
+
+      对应本平台的讨论和答疑QQ群：大数据和人工智能躺过的坑（总群）（161156071） 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+作者：大数据和人工智能躺过的坑
+出处：http://www.cnblogs.com/zlslch/
+
+本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接，否则保留追究法律责任的权利。 如果您认为这篇文章还不错或者有所收获，您可以通过右边的“打赏”功能 打赏我一杯咖啡【物质支持】，也可以点击右下角的【好文要顶】按钮【精神支持】，因为这两种支持都是我继续写作，分享的最大动力！
+
+好文要顶 关注我 收藏该文    
+大数据和AI躺过的坑
+关注 - 39
+粉丝 - 968
++加关注
+1 1
+? 上一篇： 全网最全的Windows下Anaconda2 / Anaconda3里正确下载安装用来向微信好友发送消息的itchat库（图文详解） 
+? 下一篇： 全网最全的Windows下Python2 / Python3里正确下载安装用来向微信好友发送消息的itchat库（图文详解）
+posted @ 2018-07-04 09:09 大数据和AI躺过的坑 阅读(18328) 评论(0) 编辑 收藏
+刷新评论刷新页面返回顶部
+注册用户登录后才能发表评论，请 登录 或 注册， 访问 网站首页。
+【推荐】超50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库
+【活动】京东云服务器_云主机低于1折，低价高性能产品备战双11
+【推荐】天翼云新用户专享，0元体验数十款云产品，立即开通
+【活动】魔程社区技术沙龙—移动测试应用专场等你报名
+【福利】学AI有奖：博客园&华为云 Modelarts 有奖训练营
+相关博文：
+· 全网最详细的SublimeText3的激活（图文详解）
+· 全网最详细的HadoopHA集群启动后，两个namenode都是active的解决办法（图文详解）
+· 全网最详细的跑python2.7时出现from mysql import connector ImportError: No module named mysql的问题解决办法（图文详解）
+· 全网最详细的CentOS7里安装MySQL时出现Nopackagemysql-serveravailable错误的解决办法（图文详解）
+· 全网最详细的Windows里下载与安装SublimeText*（图文详解）
+最新 IT 新闻: 
+· 阿里云葛岱斌：让天下没有难做的安全运维 
+· 传意大利明年将向巨头征收网络税 预计收益6亿欧元 
+· 哈勃蟹状星云照展示小行星弧形轨迹 
+· 谷歌上诉欧盟反垄断罚款一案将在明年2月12日开审 
+· 逾25万名北京孕妇的临床记录：空气污染或增加孕早期流产风险 
+? 更多新闻...
+历史上的今天： 
+2018-07-04 全网最全的Windows下Anaconda2 / Anaconda3里正确下载安装用来向微信好友发送消息的itchat库（图文详解）
+欢迎您来到《大数据和人工智能躺过的坑》的3D彩色云标签，让您多份关注与留念。 微信公众号平台1： 大数据躺过的坑 微信公众号平台2： Java从入门到架构师 微信公众号平台3 ： 人工智能躺过的坑 大数据和人工智能躺过的坑（总群）： 161156071 更多QQ技术分群，详情请见：http://www.cnblogs.com/zlslch/p/7473861.html
+ELKHDFSHadoop源码解读MahoutMavenChefLinuxMongoDBFlumeKettleCassandraKuduPhoenix/squirrelpythongithubRedisGoogle改变生活DockerSpark HuePhoenix/squirrelEChartsAtlasHivekafkaIDEAExcel数据挖掘HadoopPigMapReduceAzkaban\OozieFlumeCaffeHBaseKettleAvroImpalaLucene/solrBeam
+昵称： 大数据和AI躺过的坑 
+园龄： 3年10个月 
+粉丝： 968 
+关注： 39
++加关注
+<	2019年10月	>
+日	一	二	三	四	五	六
+29	30	1	2	3	4	5
+6	7	8	9	10	11	12
+13	14	15	16	17	18	19
+20	21	22	23	24	25	26
+27	28	29	30	31	1	2
+3	4	5	6	7	8	9
+搜索
+
+ 找找看
+
+ 谷歌搜索
+常用链接
+我的随笔
+我的评论
+我的参与
+最新评论
+我的标签
+积分与排名
+积分 -	2118257
+排名 -	27
+随笔分类
+IBM SPSS Modeler/Statistics(7)
+Apache Atlas（Hadoop的元数据治理）(1)
+Azkaban（第三方工作流）与Oozie（Hadoop内置工作流）、hadoop工作流（概念学习和搭建系列）(32)
+Beam（一个开源的统一的分布式数据处理编程库）(18)
+BigData各子项目集群的详细启动步骤（1、3、5节点）(10)
+Caffe(2)
+Cassandra概念学习系列(5)
+Chef
+Cloudera Hue（可视化分析利器）的概念学习系列和部署搭建(28)
+Cloudera Impala(15)
+Disconf（分布式配置管理平台）(8)
+Docker概念学习系列(11)
+ECharts(2)
+Eclipse/ MyEclipse / Scala IDE for Eclipse / IntelliJ IDEA / JetBrains PyCharm(74)
+Elasticsearch 编程API入门系列(2)
+ELK（Elasticsearch/Logstash/Kibana）概念学习系列(59)
+ELK(Elasticsearch/Logstash/Kibana)集群搭建(26)
+Excel 2013 中数据挖掘(2)
+Github / Git / TortoiseGit / CVS / SVN(32)
+Google改变生活(18)
+Hadoop Avro概念学习系列和部署搭建(2)
+Hadoop Flume概念学习系列(25)
+Hadoop Flume集群搭建(5)
+Hadoop HBase编程 API入门系列(10)
+Hadoop HBase概念学习系列(29)
+Hadoop HBase集群搭建与开发环境(20)
+Hadoop HDFS编程 API入门系列(9)
+Hadoop HDFS概念学习系列(7)
+Hadoop Hive编程 API入门系列(4)
+Hadoop Hive概念学习系列(31)
+Hadoop Hive集群搭建（含CentOS和Ubuntu）(17)
+Hadoop Mahout概念学习系列(23)
+Hadoop MapReduce编程 API入门系列(32)
+Hadoop Mapreduce编程环境搭建(6)
+Hadoop MapReduce概念学习系列(4)
+Hadoop Pig概念学习系列和部署搭建(3)
+Hadoop shell (2)
+Hadoop YARN
+Hadoop 概念学习系列(27)
+Hadoop 源码解读(4)
+Hadoop+Spark大数据巨量分析与机器学习整合开发实战 书籍
+Hadoop集群搭建（1、3和5节点）（包含Apache Hadoop和CDH版本）(27)
+Jdk / Java(29)
+kafka编程入门API系列(2)
+kafka概念学习系列(42)
+kafka集群搭建(9)
+Kudu（一款介于hdfs和hbase之间的高速分布式列式存储数据库）(19)
+Linux概念学习与操作系统（含CentOS和Ubuntu）(115)
+Lucene / solr 概念学习系列(11)
+Maven构建项目与概念学习系列(32)
+MongoDB概念学习系列(17)
+Mxnet(2)
+MySQL / Oracle / PLSQL Developer概念学习系列(55)
+MySQL概念学习与逐步上手操作系列（一套完整）(52)
+Nagios概念学习系列(1)
+Neo4j概念学习系列(9)
+Nginx / Tengine(21)
+Pentaho Kettle 和 StreamSets(19)
+Phoenix（HBase的开源SQL引擎）与squirrel(windows上Phoneix可视化工具)(5)
+python学习路线(20)
+Redis概念学习系列(5)
+RHive概念学习系列(1)
+RMySQL概念学习系列(1)
+R学习路线(1)
+shell(1)
+SourceTree(Git代码管理可视化界面的项目版本控制软件)(1)
+Spark MLI
+Spark MLlib编程入门系列(41)
+Spark MLlib概念学习系列(9)
+Spark Scala语言学习系列(10)
+Spark DataFrame(4)
+Spark GraphX概念学习系列
+Spark MLbase概念学习系列
+Spark Mllib机器学习实战 书籍
+Spark RDD/Core 编程 API入门系列(8)
+Spark RDD/Core概念学习系列(19)
+Spark R概念学习系列(1)
+Spark Shell(5)
+Spark SQL 编程API入门系列(5)
+Spark SQL概念学习系列(16)
+Spark Streaming 编程API入门系列
+Spark Streaming概念学习系列(7)
+Spark Submit(2)
+Spark Tachyon概念学习系列(4)
+Spark 概念学习系列(23)
+Spark 源码解读(8)
+spark-2.2.0-bin-hadoop2.6和spark-1.6.1-bin-hadoop2.6发行包自带案例全面详解（java、python、r和scala）(7)
+Spark集群搭建（1、3和5节点）（含CentOS系统和Ubuntu系统）(29)
+Sqoop概念学习系列(16)
+Sqoop集群搭建(3)
+Storm编程入门API系列(10)
+Storm概念学习系列(26)
+Storm集群搭建(7)
+StreamSet
+Tableau、Microsoft Power BI Desktop、FineReport和FineBI（一款BI报表工具）(5)
+Tensorflow(9)
+Tomcat概念学习与操作系列(8)
+Torch(2)
+weekend110（Hadoop、MapReduce、Zookeeper、Hive、HBase、flume、sqoop、kafka）(39)
+Weka中数据挖掘与机器学习(9)
+windows实用网络(9)
+Zeppelin(9)
+zookeeper编程入门系列(2)
+Zookeeper概念学习系列(11)
+Zookeeper集群搭建(4)
+博客园第几笔(3)
+大牛博客(1)
+大数据平台搭建、管理、监控利器（Ambari和Cloudera Manger）(72)
+分布式大数据多维分析（OLAP）引擎Kylin(7)
+分词器/倒排索引/搜索引擎概念学习系列(1)
+个人微信公众号(1)
+机器学习/深度学习(63)
+机器学习实战书籍
+局域网 / 计算机网络(41)
+牛客网Java笔试面试刷题(64)
+爬虫(7)
+实用软件汇总与操作技巧(104)
+网络安全攻防(90)
+心灵鸡汤(4)
+随笔档案
+2019年4月(1)
+2019年2月(1)
+2019年1月(1)
+2018年11月(1)
+2018年9月(1)
+2018年8月(2)
+2018年7月(40)
+2018年6月(31)
+2018年5月(4)
+2018年4月(4)
+2018年3月(31)
+2018年2月(7)
+2018年1月(22)
+2017年12月(53)
+2017年11月(5)
+2017年10月(27)
+2017年9月(138)
+2017年8月(121)
+2017年7月(79)
+2017年6月(139)
+2017年5月(125)
+2017年4月(135)
+2017年3月(152)
+2017年2月(54)
+2017年1月(15)
+2016年12月(104)
+2016年11月(190)
+2016年10月(161)
+2016年9月(102)
+2016年8月(4)
+2016年7月(38)
+2016年5月(1)
+2016年4月(1)
+2016年3月(4)
+2016年1月(1)
+2015年12月(9)
+最新评论
+1. Re:快捷键Ctrl+c、Ctrl+d、Ctrl+u、Ctrl+a、Ctrl+e
+学到了
+--熊猫哥哥233
+2. Re:Elasticsearch之head插件安装之后的浏览详解
+这尼玛？？？？？？？？？？
+--Muliti_Hu
+3. Re:Ubuntu16.04下Neo4j图数据库官网安装部署步骤（图文详解）（博主推荐）
+您好，想问一下有遇到过这样的问题吗？希望得到您的帮助，谢谢！ ERROR Failed to start Neo4j: Starting Neo4j failed: Component 'org.ne...
+--向阳而生1
+4. Re:kibana.yml（中文配置详解）
+说好的中文呢？说好的节操呢
+--心情不错QQ
+5. Re:全网最详细的启动zkfc进程时，出现INFO zookeeper.ClientCnxn: Opening socket connection to server***/192.168.80.151:2181. Will not attempt to authenticate using SASL (unknown error)解决办法（图文详解）
+没看懂您的解决思路呀
+--AnyYoung
+阅读排行榜
+1. Windows下的Jupyter Notebook 安装与自定义启动（图文详解）(116981)
+2. filebeat.yml（中文配置详解）(54998)
+3. Elasticsearch之中文分词器插件es-ik（博主推荐）(54775)
+4. Hadoop概念学习系列之Hadoop、Spark学习路线（很值得推荐）（十八）(54221)
+5. MySQL常见的数据类型（八）(51926)
+评论排行榜
+1. 亿图图示专家的下载、安装和注册激活（图文详细教程）(10)
+2. 什么是倒排索引？(8)
+3. Elasticsearch之中文分词器插件es-ik的自定义热更新词库(8)
+4. 安装Hue后的一些功能的问题解决干货总结（博主推荐）(6)
+5. Impala和Hive的关系（详解）(5)
+推荐排行榜
+1. 什么是倒排索引？(13)
+2. Hadoop概念学习系列之Hadoop、Spark学习路线（很值得推荐）（十八）(6)
+3. mongodb.conf配置文件详解(5)
+4. Elasticsearch之settings和mappings（图文详解）(5)
+5. Eclipse里Tomcat报错：Document base ……does not exist or is not a readable directory（图文详解）(4)
+Copyright ? 2019 大数据和AI躺过的坑 
+Powered by .NET Core 3.0.0 on Linux
